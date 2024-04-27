@@ -31,7 +31,6 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp32_4MB_M' >>platformio.ini
-        echo 'build_flags = ${env:esp32_4MB_M.build_flags} -D WLED_ENABLE_DMX' >>platformio.ini
         
         pio run -e custom_build || pio run -e custom_build
     - name: Copy Files
